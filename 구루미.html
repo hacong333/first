@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>구루미의 몽글한 밤</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #a6baff, #d5dfff); /* 파스텔 밤하늘 */
+      background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+      font-family: 'Dongle', sans-serif;
+      overflow-x: hidden;
+      
+    }
+
+    .cloud-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 250px;
+      background: radial-gradient(ellipse at top, #ffffff80, #ffffff00 70%);
+      animation: floatCloud 30s linear infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes floatCloud {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(100px); }
+    }
+
+    .container {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 2rem;
+      padding: 40px 30px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: popIn 1s ease;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .character {
+      width: 160px;
+      margin-bottom: 20px;
+      margin-top: 50px;
+    }
+
+    h1 {
+      font-size: 5rem;
+      color: #8e92f4; /* 구루미 머리색 계열 */
+      margin: 0;
+    }
+
+    p {
+      font-size: 2.5rem;
+      color: #ff92b2; /* 볼터치 핑크 */
+      margin-top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="cloud-bg"></div>
+
+  <div class="container">
+    <div class="card">
+      <img src="Asset 2.png" alt="구루미 캐릭터" class="character" />
+      <h1>구루미의 밤</h1>
+
+      <p>몽글몽글, 포근한 꿈이 피어나는 시간</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10월에 떠나는 단풍 여행</title>
+
+    <!--네이버 폰트 연결(나눔스퀘어:본문용, 나눔손글씨 붓:헤더 제목용)-->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-brush.css" rel="stylesheet">
+
+    <!--파비콘(즐겨찾기 아이콘)-->
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+
+    <style>
+
+        * {     /*전체 공통*/
+            font-family: 'NanumSquare';    /*웹폰트 사용*/
+            box-sizing: border-box;    /*크기 기준: 테두리 선까지*/
+            margin: 0;                         /*여백 없애기*/
+        }
+
+        #container {      /*전체 박스*/
+            width: 100%;  max-width: 1200px;    /*가로폭 최대 1200px 안에 100% 채우기*/
+            margin: auto;
+        }
+
+        #header {     /*헤더(머릿말) 영역*/
+            width: 100%;  height: 400px;
+            background-image: url(images/freepik__the-style-is-candid-image-photography-with-natural__77151.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: #fff; position: relative;
+        }
+
+        #headerBox{
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            
+        }
+
+        #headerBox > p {
+            font-size: 1.2em;
+            padding-top: 10px;
+            padding-left: 130px;
+        }
+        #header > h1 {     /*헤더 안의 큰 제목*/
+            font-family: 'NanumBrush';
+            font-weight: normal;
+            font-size: 4em;
+            padding-top: 50px;  padding-left: 20px;
+        }
+
+        #header > p {     /*헤더 안의 단락 문자*/
+            font-size: 1.2em;
+            padding-top: 10px; padding-left: 20px;
+        }
+
+        #header > h1 > img {
+            width: 50px; margin-right: 10px;
+        }
+
+
+        /* 내비게이션 영역 */
+        #navi {      /*내비게이션 박스 영역*/
+            width: 100%;  height: 50px;
+            background-color: #111;
+        }
+
+        #menu {    /*메뉴 박스 ul*/
+            list-style: none;    /*부호 없애기*/
+            padding: 0;          /*부호 공간 없애기*/
+
+            display: flex;      /*가로 방향으로 배치하기*/
+            justify-content: center;    /*수평 정렬 - 가운데*/
+        }
+
+        .main {      /*각 메뉴 리스트 li*/
+        }
+
+        .main > a {      /*각 메뉴 링크*/
+            color: #eee;
+            font-size: 1.2em;
+            text-decoration: none;     /*밑줄 없애기*/
+            display: block;                /*여백 조절, 공간 채우기*/
+            padding: 0 1em;
+            line-height: 50px;       /*세로 높이, 가운데 맞춤*/
+            transition: 0.3s;           /*전환 효과 0.3초*/
+        }
+
+        .main > a:hover {
+            background-color: #FA812F;
+        }
+
+
+        /*섹션 영역*/
+        #contents {     /*섹션 영역*/
+            background-color: #faeabf;
+            padding: 1em;
+        }
+
+        #sectionTitle {    /*섹션 제목*/
+            font-size: 2em;
+            color: #7C4585;
+            margin-bottom: 0.5em;
+        }
+        
+        .text {     /*섹션 본문 내용들*/
+            font-size: 1.1em;
+            text-align: justify;
+            line-height: 1.5em;
+            margin-bottom: 1em;
+        }
+
+        .smallTitle {    /*소제목 문자*/
+            background-color: #555;
+            color: #fff;
+            font-size: 1.5em;
+            padding: 0.4em 1em;
+            margin-bottom: 0.5em;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.7);   /*그림자 효과*/
+
+            display: inline-block;   /*내용 만큼의 폭으로 만들기*/
+        }
+
+        .galleryBox {     /*사진,영상 리스트 박스 ul*/
+            list-style: none;  padding: 0;
+
+            display: grid;    /*바둑판 배치*/
+            grid-template-columns: 1fr 1fr 1fr 1fr ;   /*같은 비율(fraction)로 4등분*/
+            gap: 20px;
+        }
+
+        .list {      /*각 리스트*/
+            position: relative;
+            overflow: hidden;
+        }
+        .아이콘{
+            position: absolute;
+            top: -10px; left: -10px;
+            transform: scale(0.5);
+        }
+
+        .thumb:hover{
+            transform: scale(1.05);
+
+        }
+        .thumb{
+            transition: 0.3s;
+        }
+
+        .thumb, .video {      /*리스트 이미지,영상*/
+            width: 100%;     /*공간의 폭에 맞추기*/
+            display: block;    /*공간의 세로 폭에 채우기*/
+            
+            border-radius: 10px 50px;    /*둥근모서리*/
+        }
+
+        .map {     /*구글 지도*/
+            width: 100%;  height: 300px;
+            margin-top: 10px;  margin-bottom: 50px;
+            border-radius: 10px;
+        }
+
+        #link {    /*기상청 링크*/
+            background-color: #7C4585;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+        }
+
+        #link:hover {
+            background-color: #111;
+        }
+
+
+        /* 푸터(꼬릿말) 영역 */
+        #footer {
+            background-color: #555;
+            color: #ddd;
+            padding: 2em;
+            line-height: 1.6em;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+    
+    <div id="container">    <!--전체 박스-->
+
+        <header id="header">    <!--헤더(머릿말) 영역-->
+            <div id="headerBox">
+            <h1><img src="images/icon.png" alt="로고">10월에 떠나는 단풍 여행지</h1>
+            <p>Happy memories in the fall foliage</p>
+                        </div>
+        </header>
+
+
+        <nav id="navi">     <!--내비게이션(메뉴) 영역-->
+            <ul id="menu">
+                <li class="main"><a href="1.html">단풍시기</a></li>
+                <li class="main"><a href="2.html">서울 단풍길 105선</a></li>
+                <li class="main"><a href="3.html">수도권</a></li>
+                <li class="main"><a href="4.html">지방</a></li>
+            </ul>
+        </nav>
+
+
+        <section id="contents">     <!--섹션(본문) 영역-->
+            <h2 id="sectionTitle">단풍 시기</h2>
+
+            <p class="text">북한지역을 제외하고 우리나라의 단풍 시작은 설악산을 기준으로 삼는 게 일반적인데 보통 설악산의 단풍이 시작 되었다는 것은 산정상 20% 정도가 단풍으로 물들기 시작 했을 때를 말하는 것으로 기상청의 예측도를 보니 올해도 9월 말경 설악산의 단풍을 시작으로 전국적으로 단풍이 물들어가기 시작해서 10월 말경에 전라남도 완도까지 단풍이 퍼지게 된다고 예측을 할 수 있다.</p>
+
+            <h3 class="smallTitle">강원도 설악산</h3>
+            <p class="text">가을이면 단풍, 단풍하면 설악산 아닐까요? 길이 가파르지 않아 초보자들도 쉽게 오를 수 있는 양폭대피소 코스, 설악산을 대표하는 단풍코스인 용소폭포 코스, 기암괴석과 단풍의 조화를 만끽할 수 있는 울산바위 코스(난이도 있는 편)를 추천합니다.</p>
+            <ul class="galleryBox">
+                <li class="list">
+                    <img src="images/mt001.jpg" alt="강원도 설악산" class="thumb">
+                    <img src="images/그림.png" alt="사진" class="아이콘">
+                </li>
+                <li class="list">
+                    <img src="images/mt002.jpg" alt="강원도 설악산" class="thumb">
+                                        <img src="images/그림.png" alt="사진" class="아이콘">
+                </li>
+                <li class="list">
+                    <img src="images/mt003.jpg" alt="강원도 설악산" class="thumb">
+                                        <img src="images/그림.png" alt="사진" class="아이콘">
+                </li>
+                <li class="list">
+                    <video src="videos/mountain01.mp4" controls  loop poster="videos/mountain01.jpg" class="video"></video>
+                                        <img src="images/영상.png" alt="영상" class="아이콘">
+                </li>
+            </ul>
+
+            <!-- 구글지도 -->
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d71016.78569148784!2d128.43837610816308!3d38.127909967794494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5fd8a6b156172ecd%3A0xc3f60743db18b103!2z7ISk7JWF7IKw!5e0!3m2!1sko!2skr!4v1748320656618!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <h3 class="smallTitle">정읍 내장산</h3>
+            <p class="text">조선 8경 중 하나인 내장산은 1971년 국립공원으로 지정되었어요. 내장산의 단풍터널(일주문-내장사)은 단풍 구경 명소로 많은 이들에게 오랫동안 사랑받아왔는데요. 케이블카를 타고 편하게 관람해도 좋지만, 이왕 산에 갔으니 금선폭포를 보고 돌아오는 가벼운 등산 코스(소요시간 약 1시간 50분)는 어떨까요?</p>
+            <ul class="galleryBox">
+                <li class="list">
+                    <img src="images/mt004.jpg" alt="정읍 내장산" class="thumb">
+                </li>
+                <li class="list">
+                    <img src="images/mt005.jpg" alt="정읍 내장산" class="thumb">
+                </li>
+                <li class="list">
+                    <img src="images/mt006.jpg" alt="정읍 내장산" class="thumb">
+                </li>
+                <li class="list">
+                    <video src="videos/mountain02.mp4" controls  loop poster="videos/mountain02.jpg" class="video"></video>
+                </li>
+            </ul>
+
+            <!-- 구글지도 -->
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61824.619419527!2d126.86883425693037!3d35.47320191627281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3571b96c9ebe8085%3A0x5ecd026213a99e4d!2z64K07J6l7IKw!5e0!3m2!1sko!2skr!4v1748321728667!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+            <h3 class="smallTitle">광주 무등산</h3>
+            <p class="text">가을이면 단풍, 단풍하면 설악산 아닐까요? 길이 가파르지 않아 초보자들도 쉽게 오를 수 있는 양폭대피소 코스, 설악산을 대표하는 단풍코스인 용소폭포 코스, 기암괴석과 단풍의 조화를 만끽할 수 있는 울산바위 코스(난이도 있는 편)를 추천합니다.</p>
+            <ul class="galleryBox">
+                <li class="list">
+                    <img src="images/mt007.jpg" alt="광주 무등산" class="thumb">
+                </li>
+                <li class="list">
+                    <img src="images/mt008.jpg" alt="광주 무등산" class="thumb">
+                </li>
+                <li class="list">
+                    <img src="images/mt009.jpg" alt="광주 무등산" class="thumb">
+                </li>
+                <li class="list">
+                    <video src="videos/mountain03.mp4" controls  loop poster="videos/mountain03.jpg" class="video"></video>
+                </li>
+            </ul>
+
+            <!-- 구글지도 -->
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52203.8650044361!2d126.92802978166323!3d35.138122308229136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3571f372de61dd35%3A0xede24cc93a333a0d!2z66y065Ox7IKw!5e0!3m2!1sko!2skr!4v1748321768904!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+            <a href="https://weather.go.kr" target="_blank" id="link">기상청 바로가기</a>
+
+        </section>
+
+
+        <footer id="footer">    <!--푸터(꼬릿말) 영역-->
+            <p>Copyright by K-Weather all right by served <br>
+                    Contact by master@kweather.com</p>
+        </footer> 
+
+    </div>    <!--전체 박스 끝-->
+
+</body>
+
+</html>

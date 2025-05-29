@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+<style>
+* {
+        font-family: "Noto Sans KR", sans-serif;
+}
+
+#contents{
+    width: 100%; max-width: 1200px; margin: auto;
+}
+
+#galleryBox{
+    list-style: none; padding: 0;
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr;
+    gap: 10px;
+}
+
+.list{
+    border-radius: 10px; overflow: hidden;
+}
+.image{
+    width: 100%; display: block; transition: 0.3s;
+}
+.image:hover{
+    transform: scale(1.05);
+}
+
+</style>
+
+
+
+<body>
+    <section id="contents">
+    
+        <ul id="galleryBox">
+
+        <li class="list">
+            <img src="images/bg_img01.jpg" alt="이미지" class="image">
+            </li>
+
+                    <li class="list">
+            <img src="images/bg_img02.jpg" alt="이미지" class="image">
+            </li>
+
+                    <li class="list">
+            <img src="images/bg_img03.jpg" alt="이미지" class="image">
+            </li>
+                        </ul>
+
+
+        </section>
+
+
+</body>
+
+
+</html>

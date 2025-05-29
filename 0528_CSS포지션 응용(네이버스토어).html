@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버스토어</title>
+</head>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+<style>
+* {
+        font-family: "Noto Sans KR", sans-serif;
+        * {
+        font-family: "Noto Sans KR", sans-serif;
+        box-sizing: border-box; margin: 0;
+}
+}
+
+#promotion{
+    border: 1px solid #000;
+    width: 100%; max-width: 1200px;
+    margin: auto;
+}
+#sectionTitle{
+    font-size: 2em;
+    text-align: center;
+    margin: 1em 0;}
+.purple{
+    color: blueviolet;
+}
+
+#products{
+    list-style: none; padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1em;
+}
+.list{}
+.imageBox{
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.thumb{
+    width: 100%; display: block;
+}
+.caption{}
+.top{}
+
+</style>
+
+<body>
+    
+    <section id="promotion">
+        <h2 id="sectionTitle">
+            <span class="purple">오늘의 행사</span>
+            놓치지 마세요
+
+        </h2>
+
+        <ul id="products">
+            <li class="list">
+                <div class="image box"><img src="images/thumb01.jpg" alt="상품이미지" class="thumb">
+                </div>
+                <p class="caption"></p>
+                <p class="top"></p>
+            </li>
+
+
+
+                        <li class="list">
+                <div class="image box"><img src="images/thumb02.jpg" alt="상품이미지" class="thumb">
+                </div>
+                <p class="caption"></p>
+                <p class="top"></p>
+            </li>
+
+
+
+                        <li class="list">
+                <div class="image box"><img src="images/thumb03.jpg" alt="상품이미지" class="thumb">
+                </div>
+                <p class="caption"></p>
+                <p class="top"></p>
+            </li>
+
+
+                        <li class="list">
+                <div class="image box"><img src="images/thumb04.jpg" alt="상품이미지" class="thumb">
+                </div>
+                <p class="caption"></p>
+                <p class="top"></p>
+            </li>
+
+        </ul>
+
+    </section>
+</body>
+
+
+</html>
